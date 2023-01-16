@@ -452,10 +452,8 @@ index ae4bcc8e..2a0c8853 100644
 +            request.responseIsBinary = True
 +        # Send cookies that might be set in the browser already
 +        request.withCredentials = True
-+        request.open(method.upper(), url, False)
-+        if params:
-+            if isinstance(params, Mapping):
-+                url = url + '?' + urlencode(params)
++        if isinstance(params, Mapping):
++            url = url + '?' + urlencode(params)
 +        headers = self.set_headers(request, headers)
 +        if ('range' in headers) or ('accept' in headers and 'application/octet-stream' in headers['accept']):
 +            request.overrideMimeType('text/plain; charset=x-user-defined')
@@ -477,6 +475,9 @@ index ae4bcc8e..2a0c8853 100644
 +        if verify is not None or cert or not allow_redirects or proxies or auth or hooks or files or cookies:
 +            warnings.warn('The Pyodide version of requests does not support the following parameters (yet): '
 +                          'verify, cert, allow_redirects, proxies, auth, hooks, files and cookies')
++
++        # all preparation done, open and send the request
++        request.open(method.upper(), url, False)
 +        if data:
 +            request.send(data)
 +        else:
