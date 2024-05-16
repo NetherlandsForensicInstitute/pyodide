@@ -1,20 +1,20 @@
 package:
   name: hansken
-  version: 2022.3.1.2
+  version: 2024.4.17
 
 source:
-  url: https://files.pythonhosted.org/packages/cd/c0/574aeac703cc5068d2bd4f499c8e7010c492a339ea3c810578c475984d66/hansken-2022.6.16.tar.gz
-  sha256: 0be3d85f7607791aa913e8c45ca5a045d32ff290d62ae3c47f521ddeed86cc9f
+  url: https://files.pythonhosted.org/packages/e2/97/688094afddac91f6ae04482aa1fb295a731b11d9c525e9e16fe1929477ae/hansken-2024.4.17-py3-none-any.whl
+  sha256: c7885f5021f3493402ba99b58036a832da73a7e08dae2e1d5946c577c50d3319
 
 requirements:
- run:
-   - requests
-   - logbook
-   - setuptools
-   - iso8601
-   - ijson
-   - decorator
-   - tabulate
+  run:
+    - requests
+    - logbook
+    - setuptools
+    - iso8601
+    - ijson
+    - decorator
+    - tabulate
 
 test:
   imports:
